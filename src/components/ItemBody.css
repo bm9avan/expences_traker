@@ -27,11 +27,7 @@
 .date{
   /* border: 2px solid red;  */
   float: left;
-  border-radius: 5px;
   width: 10%;
-  padding: 4px;
-  background-color: #8FBC8F;
-  box-shadow: 5px 5px 5px 1px rgba(2, 0, 0, 0.2);
 }
 
 .title{
@@ -47,10 +43,6 @@
   font-size: 20px;
   font-weight: bold;
   float: right;
-  border-radius: 5px;
   width: 10%;
-  padding: 4px;
-  background-color: #8FBC8F;
-  box-shadow: 5px 5px 5px 1px rgba(2, 0, 0, 0.2);
 }
 

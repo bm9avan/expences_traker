@@ -1,16 +1,17 @@
 import React from 'react'
+import BoxCard from './BoxCard'
 import './ItemBody.css'
 
 function ItemBody({ date, title, price }) {
   return (
     <div className='box'>
-      <div className='date'>
+      <BoxCard className='date'>
         <div className='month'>{date.toLocaleString('en-US', { month: 'long' })}</div>
         <div className='year'>{date.getFullYear()}</div>
         <div className='day'>{date.toLocaleString('en-US', { day: '2-digit' })}</div>
-      </div>
+      </BoxCard>
       <div className='title'>{title}</div>
-      <div className='price'>₹{price}</div>
+      <BoxCard className='price'>₹{price}</BoxCard>
     </div>
   )
 }

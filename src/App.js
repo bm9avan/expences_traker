@@ -3,6 +3,7 @@ import AllItems from './components/AllItems'
 
 function App() {
   const expenses = [
+    {date: new Date(),},
     {
       id: 'e1',
       title: 'Paper',

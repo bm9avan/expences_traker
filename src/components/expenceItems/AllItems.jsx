@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemBody from './ItemBody'
-import BoxCard from './BoxCard'
+import BoxCard from '../UI/BoxCard'
 import './AllItems.css'
 
 function AllItems(props) {

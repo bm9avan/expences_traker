@@ -1,5 +1,5 @@
 import React from 'react'
-import BoxCard from './BoxCard'
+import BoxCard from '../UI/BoxCard'
 import './ItemBody.css'
 
 function ItemBody({ date, title, price }) {

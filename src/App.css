@@ -10,6 +10,7 @@
 }
 
 .App-header {
+  flex-direction: row;
   font-size: calc(10px + 4vmin);
   padding-bottom: 10px;
 }

@@ -9,7 +9,7 @@ function AllItems(props) {
         <BoxCard className='outerBox'>
             {expenses.map(expense => {
                 return (
-                    <ItemBody date={expense.date} title={expense.title || "Title not given"} price={expense.price || "00"} />
+                    <ItemBody key={Math.random()} date={expense.date} title={expense.title || "Title not given"} price={expense.price || "00"} />
                 );
             })}
         </BoxCard>

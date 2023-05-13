@@ -1,0 +1,29 @@
+.controls {
+    /* display: flex; */
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-align: left;
+    justify-content: center;
+    text-align: center;
+}
+  
+.control label {
+    font-weight: bold;
+    display: inline;
+}
+
+.control input {
+    margin-bottom: 0.5rem;
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+}
+  
+.actions {
+    text-align: right;
+}

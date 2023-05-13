@@ -1,5 +1,6 @@
 import './App.css';
 import AllItems from './components/expenceItems/AllItems'
+import AddItem from './components/expenceItems/AddItem';
 
 function App() {
   const expenses = [
@@ -31,6 +32,7 @@ function App() {
   ];
   return (
     <div className="App">
+      <AddItem/>
       <header className="App-header">
         <div>Expences Traker</div>
       </header>

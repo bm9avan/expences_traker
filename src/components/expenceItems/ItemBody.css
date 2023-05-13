@@ -16,14 +16,17 @@
 .year{
   font-size: 12px;
 }
+
 .month{
   font-size: 15px;
   font-weight: bold;
 }
+
 .day{
   font-size: 18px;
   font-weight: bold;
 }
+
 .date{
   /* border: 2px solid red;  */
   float: left;
@@ -46,3 +49,25 @@
   width: 10%;
 }
 
+@media (max-width: 1000px ){
+  .box{
+    width: 80vw;
+  }
+
+  .date{
+    /* border: 2px solid red;  */
+    float: left;
+    width: 30%;
+  }
+  
+  .title{
+    width: 70%;
+    font-size: 16px;
+  }
+  
+  .price{
+    /* border: 2px solid red;  */
+    font-size: 18px;
+    width: 30%;
+  }
+} 

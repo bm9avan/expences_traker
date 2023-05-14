@@ -30,9 +30,14 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  function addingNewItemHandler(newExpence){
+    console.log(newExpence)
+  }
+
   return (
     <div className="App">
-      <AddItem/>
+      <AddItem onAddingNewItem={addingNewItemHandler} />
       <header className="App-header">
         <div>Expences Traker</div>
       </header>

@@ -4,8 +4,13 @@ import FormItem from './FormItem'
 import BoxCard from '../UI/BoxCard'
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
-function AddItems() {
+function AddItems({onAddingNewItem}) {
     const [hide, setHide] = useState(true)
+
+    function formSubmitHandler(newExpence){
+        onAddingNewItem({id:Math.random() , ...newExpence})
+    }
+
     return (
         <BoxCard className='new-expense'>
             <header onClick={()=>{setHide(!hide)}} className="App-header">
@@ -15,7 +20,7 @@ function AddItems() {
                 <BiChevronUp onClick={()=>{setHide(!hide)}} className={`${hide ? 'hide': ''}`}/>
                 </span>
             </header>
-            <FormItem className={`${hide ? 'hide': ''}`} />
+            <FormItem className={`${hide ? 'hide': ''}`} onFormSubmit={formSubmitHandler} />
         </BoxCard>
     )
 }

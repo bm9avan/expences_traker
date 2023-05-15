@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import './FormItem.css'
 
 
-const date = new Date('2023-05-13');
+const date = new Date();
 const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date).split('/');
 const todayDate = formattedDate[2]+'-'+formattedDate[0]+'-'+formattedDate[1]  // Output: "2023-05-13"
 
 function FormItem(props) {
     
-    const [input, setInput] = useState({title:'', price:'0', date: todayDate})
+    const [input, setInput] = useState({title:'', price:'10', date: todayDate})
     
     const titleChangeHandler = (event) => { setInput(prevInput=>{return {...prevInput, title: event.target.value}}) }
     const priceChangeHandler = (event) => { setInput(prevInput=>{return {...prevInput, price: event.target.value}}) }
@@ -17,7 +17,7 @@ function FormItem(props) {
     const submitHandler = (event) =>{
         event.preventDefault();
         props.onFormSubmit(input);
-        setInput({title:'', price:'0', date: todayDate});
+        setInput({title:'', price:'10', date: todayDate});
     }
 
     return (

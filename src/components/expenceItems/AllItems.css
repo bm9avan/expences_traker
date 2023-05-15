@@ -1,4 +1,17 @@
 .outerBox{
   border-radius: 15px;
   background-color: #0d1700;
+  width: 60vw;
+
+}
+
+.box-header{
+  font-size: 25px;
+  text-shadow: 2px 2px #ff0000;
+}
+
+@media (max-width: 500px ){
+  .outerBox{
+    width: 90vw;
+  }
 }

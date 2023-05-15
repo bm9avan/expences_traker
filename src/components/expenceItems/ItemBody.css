@@ -2,7 +2,6 @@
   /* border: 2px solid yellow; */
   display: flex;
   flex-direction: row;
-  width: 60vw;
   align-items: center;
   justify-content: center;
   margin: 18px;
@@ -50,10 +49,6 @@
 }
 
 @media (max-width: 1000px ){
-  .box{
-    width: 80vw;
-  }
-
   .date{
     /* border: 2px solid red;  */
     float: left;

@@ -8,7 +8,7 @@ function AddItems({onAddingNewItem}) {
     const [hide, setHide] = useState(true)
 
     function formSubmitHandler(newExpence){
-        onAddingNewItem({id:Math.random() , ...newExpence})
+        onAddingNewItem({id:Math.random() , ...newExpence, date:new Date(newExpence.date)})
     }
 
     return (

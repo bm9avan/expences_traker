@@ -12,11 +12,13 @@ function AllItems({expenses}) {
         setYear(yearpassed)
     }
 
+    let filteredExpenses = (year==='all' ? expenses : expenses.filter((expense)=>{return expense.date.getFullYear().toString() === year}))
+
     return (
         <BoxCard className='outerBox'>
             <div className='box-header'>{year==='all'? 'All Years': year}</div>
             <ExpensesFilter yearSlected={year} onSetYear={SetYearHandler} />
-            {(year==='all'?expenses : expenses.filter((expense)=>{return expense.date.getFullYear().toString() === year})).map(expense => {
+            {filteredExpenses.length === 0 ? <div className='box-header'>No Expenses Added</div> : filteredExpenses.map(expense => {
                 return (
                     <ItemBody key={expense.id} date={expense.date} title={expense.title || "Title not given"} price={expense.price || "00"} />
                 );

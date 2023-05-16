@@ -1,0 +1,9 @@
+.rowChart {
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8dfff;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  height: 10rem;
+}

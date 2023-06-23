@@ -5,12 +5,16 @@ import ExpensesFilter from './ExpensesFilter'
 import Chart from '../chart/Chart'
 import './AllItems.css'
 
-function AllItems({expenses}) {
+function AllItems({ expenses, onTitleChangeUp }) {
 
     const [year, setYear]= useState('all')
 
     function SetYearHandler(yearpassed){
         setYear(yearpassed)
+    }
+
+    function onTitleChangeHandler(changedTitle, id){
+        onTitleChangeUp(changedTitle, id)
     }
 
     let filteredExpenses = (year==='all' ? expenses : expenses.filter((expense)=>{return expense.date.getFullYear().toString() === year}))
@@ -22,7 +26,7 @@ function AllItems({expenses}) {
             <Chart expenses={filteredExpenses}/>
             {filteredExpenses.length === 0 ? <div className='box-header'>No Expenses Added</div> : filteredExpenses.map(expense => {
                 return (
-                    <ItemBody key={expense.id} date={expense.date} title={expense.title || "Title not given"} price={expense.price || "00"} />
+                    <ItemBody key={expense.id} id={expense.id} date={expense.date} title={expense.title || "Title not given"} price={expense.price || "00"} onTitleChange={onTitleChangeHandler} />
                 );
             })}
         </BoxCard>

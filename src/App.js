@@ -5,6 +5,30 @@ import AddItem from './components/expenceItems/AddItem';
 
 const expensesData = [
   {
+    id: 'f4',
+    title: 'collage cainteen',
+    price: 60,
+    date: new Date(2023, 6, 20),
+  },
+  {
+    id: 'f3',
+    title: 'fish food',
+    price: 430,
+    date: new Date(2023, 6, 18),
+  },
+  {
+    id: 'f2',
+    title: 'metro charge to visit gouthami',
+    price: 42,
+    date: new Date(2023, 6, 18),
+  },
+  {
+    id: 'f1',
+    title: 'brought washing items',
+    price: 95,
+    date: new Date(2023, 6, 16),
+  },
+  {
     id: 'e1',
     title: 'Paper',
     price: 94.12,
@@ -32,8 +56,23 @@ const expensesData = [
 
 function App() {
   const [expenses, setExpenses] = useState(expensesData)
+
   function addingNewItemHandler(newExpence) {
     setExpenses(prevExpence => [newExpence, ...prevExpence])
+  }
+
+  function updateExpenceHandeler(changedTitle, id){
+    for(let i=0; i<expenses.length; i++){
+      if(expenses[i].id === id){
+        console.log(id, changedTitle, i)
+        setExpenses((prevExpence)=>{
+          console.log(prevExpence[i])
+          prevExpence[i]={...prevExpence[i],id: id, title: changedTitle}
+          console.log(prevExpence[i])
+          return [...prevExpence ]
+        })
+      }
+    }
   }
 
   return (
@@ -42,7 +81,7 @@ function App() {
       <header className="App-header">
         <div>Expences Traker</div>
       </header>
-      <AllItems expenses={expenses} />
+      <AllItems expenses={expenses} onTitleChangeUp={updateExpenceHandeler} />
     </div>
   );
 }

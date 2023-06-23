@@ -18,7 +18,7 @@ const expensesData = [
   },
   {
     id: 'f2',
-    title: 'metro charge to visit gouthami',
+    title: 'metro charge',
     price: 42,
     date: new Date(2023, 6, 18),
   },
@@ -64,11 +64,8 @@ function App() {
   function updateExpenceHandeler(changedTitle, id){
     for(let i=0; i<expenses.length; i++){
       if(expenses[i].id === id){
-        console.log(id, changedTitle, i)
         setExpenses((prevExpence)=>{
-          console.log(prevExpence[i])
           prevExpence[i]={...prevExpence[i],id: id, title: changedTitle}
-          console.log(prevExpence[i])
           return [...prevExpence ]
         })
       }

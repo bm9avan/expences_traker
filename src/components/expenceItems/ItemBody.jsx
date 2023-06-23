@@ -7,7 +7,9 @@ function ItemBody({ id, date, title, price, onTitleChange }) {
   const [edit,setEdit] =useState(false)
   const [editTitle,setEditTitle] =useState(title)
   const editTitleInput = useRef(title);
-
+  function capFirst(str) {
+    return str[0].toUpperCase() + str.slice(1);
+  }
   function showchangeTitleHandler(){
     setEdit(true)
     setTimeout(()=>{
@@ -28,7 +30,7 @@ function ItemBody({ id, date, title, price, onTitleChange }) {
         <div className='day'>{date.toLocaleString('en-US', { day: '2-digit' })}</div>
       </BoxCard>
       <div className='title'>
-        {!edit && title}
+        {!edit && capFirst(title)}
         {edit && <input type="text" ref={editTitleInput} value={editTitle} className='titleIn' onChange={(event) => setEditTitle(event.target.value)} />}
       </div>
       {!edit && <BiPencil className='editTitle' onClick={showchangeTitleHandler}/>}

@@ -1,4 +1,3 @@
-```markdown
 # Expense Tracker
 
 expences_traker is a web application built by following the tutorial by Maximilian Schwarzmüller, an AWS certified professional web developer and instructor. It helps you track your expenses and visualize your spending patterns.
@@ -70,4 +69,3 @@ For any questions or inquiries, please feel free to contact the project creator:
 - Email: mggpavan@gmail.com
 - Contact: [@bm9avan]([https://bm9avan.bio.link/])
 
-```

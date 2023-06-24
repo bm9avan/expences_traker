@@ -37,7 +37,7 @@ To run the expences_traker application locally, follow these steps:
 
 The Expense Tracker application has the following component tree:
 
-![expences_traker_component_tree](https://github.com/bm9avan/expences_traker/assets/112481852/9bb6b583-83a7-4bc1-8997-e6ddff267bc5)
+![expences_traker_component_tree](https://github.com/bm9avan/expences_traker/assets/112481852/de2bd2d5-2c95-4520-8cae-1d2c4fafad86)
 
 ## Usage
 
@@ -45,7 +45,8 @@ The Expense Tracker application has the following component tree:
 - Use the "Add Expense" button to add new expenses.
 - Use the chevron icons (BiChevronDown, BiChevronUp) to expand and collapse the input form for expenses.
 - Filter and sort expenses using the ExpensesFilter component.
-- View your expenses in the BoxCard and analyze them using the Chart component.
+- View your expenses in the AllItems and analyze them using the Chart component.
+- BoxCard is an UI component used to reduce code duplication and give a shadowing effect
 
 ## Technologies Used
 

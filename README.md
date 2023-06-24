@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+```markdown
+# Expense Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+expences_traker is a web application built by following the tutorial by Maximilian Schwarzmüller, an AWS certified professional web developer and instructor. It helps you track your expenses and visualize your spending patterns.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To run the expences_traker application locally, follow these steps:
 
-### `npm start`
+1. Clone the repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```shell
+   git clone https://github.com/bm9avan/expences_traker.git
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project directory:
 
-### `npm test`
+   ```shell
+   cd expences_traker
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the required dependencies:
 
-### `npm run build`
+   ```shell
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```shell
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Open your browser and visit `http://localhost:3000` to access the application.
 
-### `npm run eject`
+## Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The Expense Tracker application has the following component tree:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![expences_traker_component_tree](https://github.com/bm9avan/expences_traker/assets/112481852/9bb6b583-83a7-4bc1-8997-e6ddff267bc5)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Start the application and open it in your browser.
+- Use the "Add Expense" button to add new expenses.
+- Use the chevron icons (BiChevronDown, BiChevronUp) to expand and collapse the input form for expenses.
+- Filter and sort expenses using the ExpensesFilter component.
+- View your expenses in the BoxCard and analyze them using the Chart component.
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Expense Tracker application uses the following technologies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React.js
+- CSS (stylesheets provided by the tutorial)
 
-### Code Splitting
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project was built by following the tutorial by Maximilian Schwarzmüller, an AWS certified professional web developer and instructor. The tutorial provided the foundation and guidance for building the Expense Tracker application.
 
-### Analyzing the Bundle Size
+Instructor: Maximilian Schwarzmüller
+- Udemy Course: [React - The Complete Guide 2023]([https://www.udemy.com/course/react-the-complete-guide-incl-redux/])
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
+For any questions or inquiries, please feel free to contact the project creator:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Name: PAVAN
+- Email: mggpavan@gmail.com
+- Contact: [@bm9avan]([https://bm9avan.bio.link/])
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

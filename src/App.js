@@ -1,72 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import AllItems from './components/expenceItems/AllItems'
 import AddItem from './components/expenceItems/AddItem';
-
-const expensesData = [
-  {
-    id: 'f4',
-    title: 'collage cainteen',
-    price: 60,
-    date: new Date(2023, 6, 20),
-  },
-  {
-    id: 'f3',
-    title: 'fish food',
-    price: 430,
-    date: new Date(2023, 6, 18),
-  },
-  {
-    id: 'f2',
-    title: 'metro charge',
-    price: 42,
-    date: new Date(2023, 6, 18),
-  },
-  {
-    id: 'f1',
-    title: 'brought washing items',
-    price: 95,
-    date: new Date(2023, 6, 16),
-  },
-  {
-    id: 'e1',
-    title: 'Paper',
-    price: 94.12,
-    date: new Date(2020, 7, 14),
-  },
-  {
-    id: 'e2',
-    title: 'New TV',
-    price: 799.49,
-    date: new Date(2021, 2, 12)
-  },
-  {
-    id: 'e3',
-    title: 'Car Insurance',
-    price: 294.67,
-    date: new Date(2021, 2, 28),
-  },
-  {
-    id: 'e4',
-    title: 'New Desk (Wooden)',
-    price: 450,
-    date: new Date(2021, 5, 12),
-  },
-];
+import useFetch from './hooks/use-fetch';
 
 function App() {
-  const [expenses, setExpenses] = useState(expensesData)
+  const [expenses, setExpenses] = useState([])
+  const getData = useFetch();
+
+  function refacter(data) {
+    console.log("app", Object.keys(data))
+    let arr = Object.keys(data).reverse().map((each) => {
+      return {
+        id: each,
+        title: data[each].title,
+        price: data[each].price,
+        date: new Date(data[each].date)
+      }
+    })
+    setExpenses(arr)
+  }
+
+  useEffect(() => {
+    getData(null, (data) => refacter(data))
+  }, [getData])
 
   function addingNewItemHandler(newExpence) {
     setExpenses(prevExpence => [newExpence, ...prevExpence])
   }
 
-  function updateExpenceHandeler(changedTitle, id){
-    for(let i=0; i<expenses.length; i++){
-      if(expenses[i].id === id){
-        setExpenses((prevExpence)=>{
-          prevExpence[i]={...prevExpence[i],id: id, title: changedTitle}
-          return [...prevExpence ]
+  function updateExpenceHandeler(changedTitle, id) {
+    for (let i = 0; i < expenses.length; i++) {
+      if (expenses[i].id === id) {
+        setExpenses((prevExpence) => {
+          prevExpence[i] = { ...prevExpence[i], id: id, title: changedTitle }
+          return [...prevExpence]
         })
       }
     }

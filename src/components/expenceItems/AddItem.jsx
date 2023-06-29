@@ -7,7 +7,7 @@ import useFetch from '../../hooks/use-fetch';
 
 function AddItems({ onAddingNewItem }) {
     const [hide, setHide] = useState(true)
-    const addData = useFetch();
+    const { callFetch: addData, loading } = useFetch();
 
     function formSubmitHandler(newExpence) {
         addData({
@@ -20,7 +20,6 @@ function AddItems({ onAddingNewItem }) {
     }
 
     function dataHandler(newExpence, data) {
-        console.log(data)
         onAddingNewItem({ id: data.name, ...newExpence, price: (+newExpence.price), date: new Date(newExpence.date) })
     }
 
@@ -33,7 +32,7 @@ function AddItems({ onAddingNewItem }) {
                     <BiChevronUp onClick={() => { setHide(!hide) }} className={`${hide ? 'hide' : ''}`} />
                 </span>
             </header>
-            <FormItem className={`${hide ? 'hide' : ''}`} onFormSubmit={formSubmitHandler} />
+            <FormItem className={`${hide ? 'hide' : ''}`} onFormSubmit={formSubmitHandler} loading={loading} />
         </BoxCard>
     )
 }

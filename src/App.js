@@ -6,19 +6,20 @@ import useFetch from './hooks/use-fetch';
 
 function App() {
   const [expenses, setExpenses] = useState([])
-  const getData = useFetch();
+  const { callFetch: getData, loading } = useFetch();
 
   function refacter(data) {
-    console.log("app", Object.keys(data))
-    let arr = Object.keys(data).reverse().map((each) => {
-      return {
-        id: each,
-        title: data[each].title,
-        price: data[each].price,
-        date: new Date(data[each].date)
-      }
-    })
-    setExpenses(arr)
+    if (data) {
+      let arr = Object.keys(data).reverse().map((each) => {
+        return {
+          id: each,
+          title: data[each].title,
+          price: data[each].price,
+          date: new Date(data[each].date)
+        }
+      })
+      setExpenses(arr)
+    }
   }
 
   useEffect(() => {
@@ -46,7 +47,7 @@ function App() {
       <header className="App-header">
         <div>Expences Traker</div>
       </header>
-      <AllItems expenses={expenses} onTitleChangeUp={updateExpenceHandeler} />
+      <AllItems expenses={expenses} onTitleChangeUp={updateExpenceHandeler} loading={loading} />
     </div>
   );
 }

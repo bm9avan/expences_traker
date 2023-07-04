@@ -15,12 +15,12 @@ function AddItems({ onAddingNewItem }) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newExpence)
+            body: newExpence
         }, dataHandler.bind(null, newExpence))
     }
 
     function dataHandler(newExpence, data) {
-        onAddingNewItem({ id: data.name, ...newExpence, price: (+newExpence.price), date: new Date(newExpence.date) })
+        onAddingNewItem({ id: data, ...newExpence, price: (+newExpence.price), date: new Date(newExpence.date) })
     }
 
     return (

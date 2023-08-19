@@ -23,7 +23,7 @@ function App() {
   }
 
   useEffect(() => {
-    getData(null, (data) => refacter(data))
+    getData({method:"GET"}, (data) => refacter(data))
   }, [getData])
 
   function addingNewItemHandler(newExpence) {
@@ -41,13 +41,23 @@ function App() {
     }
   }
 
+  function onDeleteHandler(id){
+    let exp = expenses.filter(element => {
+      if(element.id === id){
+          return false
+      }
+      return true
+    });
+    setExpenses(exp)
+  }
+
   return (
     <div className="App">
       <AddItem onAddingNewItem={addingNewItemHandler} />
       <header className="App-header">
         <div>Expences Traker</div>
       </header>
-      <AllItems expenses={expenses} onTitleChangeUp={updateExpenceHandeler} loading={loading} />
+      <AllItems expenses={expenses} onTitleChangeUp={updateExpenceHandeler} onDelete={onDeleteHandler} loading={loading} />
     </div>
   );
 }

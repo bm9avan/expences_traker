@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react'
 import BoxCard from '../UI/BoxCard'
 import './ItemBody.css'
 import { BiPencil, BiCheck } from "react-icons/bi";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
-function ItemBody({ id, date, title, price, onTitleChange }) {
+function ItemBody({ id, date, title, price, onTitleChange, deleteHandler }) {
   const [edit,setEdit] =useState(false)
   const [editTitle,setEditTitle] =useState(title)
   const editTitleInput = useRef(title);
@@ -36,6 +37,7 @@ function ItemBody({ id, date, title, price, onTitleChange }) {
       {!edit && <BiPencil className='editTitle' onClick={showchangeTitleHandler}/>}
       {edit && <BiCheck className='editTitle' onClick={sendTitleHandler}/>}
       <BoxCard className='price'>₹{price}</BoxCard>
+      <RiDeleteBin6Line className='editTitle' onClick={()=>{deleteHandler(id)}}/>
     </div>
   )
 }

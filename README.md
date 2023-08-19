@@ -46,6 +46,8 @@ The Expense Tracker application has the following component tree:
 - Filter and sort expenses using the ExpensesFilter component.
 - View your expenses in the AllItems and analyze them using the Chart component.
 - BoxCard is an UI component used to reduce code duplication and give a shadowing effect
+- Use BiPencil(pencil icon) and BiCheck(tick mark icon) to edit and update Title
+- Use RiDeleteBin6Line(delete icon) to Delete particular expence
 
 ## Technologies Used
 
@@ -53,6 +55,7 @@ The Expense Tracker application uses the following technologies:
 
 - React.js
 - CSS (stylesheets provided by the tutorial)
+- Firebase to manage data
 
 ## Credits
 

@@ -5,7 +5,7 @@ import BoxCard from '../UI/BoxCard'
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import useFetch from '../../hooks/use-fetch';
 
-function AddItems({ onAddingNewItem }) {
+function AddItems({ onAddingNewItem, uid }) {
     const [hide, setHide] = useState(true)
     const { callFetch: addData, loading } = useFetch();
 
@@ -15,6 +15,7 @@ function AddItems({ onAddingNewItem }) {
             headers: {
                 "Content-Type": "application/json",
             },
+            uid: uid,
             body: JSON.stringify(newExpence)
         }, dataHandler.bind(null, newExpence))
     }
@@ -24,7 +25,7 @@ function AddItems({ onAddingNewItem }) {
     }
 
     return (
-        <BoxCard className='new-expense'>
+        <BoxCard className='new-expense pointer'>
             <header onClick={() => { setHide(!hide) }} className="App-header">
                 <div className='App-header-title'>Add Expences</div>
                 <span className='icon-right'>

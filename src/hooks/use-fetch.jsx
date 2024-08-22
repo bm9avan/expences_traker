@@ -8,11 +8,11 @@ const useFetch = () => {
             setLoading(true)
             let responce;
             if(obj.method==="DELETE"){
-                responce = await fetch(`${process.env.REACT_APP_API_URL}/expences/${obj.id}.json`, {method:obj.method})
+                responce = await fetch(`${process.env.REACT_APP_API_URL}/expences/${obj.uid}/${obj.id}.json`, {method:obj.method})
             }else if(obj.method==="PUT"){
-                responce = await fetch(`${process.env.REACT_APP_API_URL}/expences/${obj.id}/title.json`, {method:obj.method, headers: obj.headers, body:obj.body})
+                responce = await fetch(`${process.env.REACT_APP_API_URL}/expences/${obj.uid}/${obj.id}/title.json`, {method:obj.method, headers: obj.headers, body:obj.body})
             }else{
-                responce = await fetch(`${process.env.REACT_APP_API_URL}/expences.json`, obj)
+                responce = await fetch(`${process.env.REACT_APP_API_URL}/expences/${obj.uid}.json`, obj)
             }
             const data = await responce.json()
             dataHandler(data)

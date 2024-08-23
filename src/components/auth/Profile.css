@@ -1,0 +1,61 @@
+/* Profile.css */
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed position for navigation bar placement */
+    bottom: 10px; /* Adjusts vertical placement */
+    z-index: 1000; /* Ensures it appears above other content */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between profile items */
+  }
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+  }
+  
+  .profile-email {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 10px;
+    white-space: nowrap; /* Prevents email text wrapping */
+  }
+  
+  .logout-button {
+    background-color: #ff5555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 12px;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff4444;
+  }
+  
+  .logout-button:focus,
+  .logout-button:active {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 85, 85, 0.3);
+  }
+  
+  @media (min-width: 500px ){
+   .profile-container {
+        right: 10px; /* Adjusts horizontal placement */
+    }
+  }

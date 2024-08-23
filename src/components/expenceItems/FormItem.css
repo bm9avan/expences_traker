@@ -27,3 +27,7 @@
 .actions {
     text-align: right;
 }
+
+.error{
+    color: rgb(171, 0, 0);
+}

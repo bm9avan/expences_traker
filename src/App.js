@@ -8,17 +8,19 @@ import { auth } from './utils/firebase';
 import Profile from './components/auth/Profile';
 
 function App() {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState("initial")
   const [expenses, setExpenses] = useState([])
   const { callFetch: getData, loading } = useFetch();
 
   useEffect(()=>{
     auth.onAuthStateChanged(async (user)=>{
+      console.log(user)
       setUser(user)
     })
   },[])
 
   function logoutHandler(){
+    setExpenses([])
     auth.signOut()
   }
 
@@ -37,7 +39,9 @@ function App() {
   }
 
   useEffect(() => {
-    getData({ method: "GET", uid: user.uid }, (data) => refacter(data))
+    if(user){
+      getData({ method: "GET", uid: user.uid }, (data) => refacter(data))
+    }
   }, [getData, user])
 
   function addingNewItemHandler(newExpence) {
@@ -64,6 +68,9 @@ function App() {
     });
     setExpenses(exp)
   }
+
+  if(user==="initial")
+    return <div className="App">Loading...</div>
 
   return (
     <div className="App">
